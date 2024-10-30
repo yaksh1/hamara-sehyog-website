@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-header {
+  height: 40vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)),
+    url(Images/fd1.jpg);
+  background-position: auto;
+  background-size: cover;
+  text-align: center;
+}
+
+.sub-header h1 {
+  text-decoration: underline; /* Underline for the heading */
+  margin-top: 30px;
+  color: #fff;
+   text-decoration-color: #f44336; /* Color of the underline */
+  text-underline-offset: 10px; /* Space between the heading and the underline */
+  margin-bottom: 20px;
+}
+.sub-header p {
+  color: #f9f9f9;
+  margin-top: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Responsive styles for .sub-header */
+@media (max-width: 768px) {
+  .sub-header {
+    padding: 40px 10px;
+  }
+
+  .sub-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .sub-header p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .sub-header {
+    padding: 30px 5px;
+  }
+
+  .sub-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .sub-header p {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+
+  /* Hide navbar toggle icons on small screens if needed */
+
+}
+
+/*---------------------------Donate card-------------------------- */
+
+.donate-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.donate-card {
+    display: flex;
+    background-color: rgb(245, 241, 230);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure rounded borders are maintained */
+     width: 95%; /* Increased width */
+    max-width: 900px; /* Max width for larger screens */
+    height: 500px; /* Increased height */
+    margin-top: -500px; /* Move card up to hover over subheader */
+}
+
+.text-container {
+    flex: 1; /* Adjusts the width to be proportional */
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left; /* Align text to the left */
+}
+
+.text-container h2{
+  margin-bottom: 10px;
+}
+
+.text-container p {
+    color: #333; /* Text color */
+    font-size: 16px; /* Font size */
+    line-height: 1.5; /* Line height for better readability */
+    text-align: justify;
+}
+.donation-details {
+    flex: 2; /* Take more space on the right */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.donation-details h1 {
+    margin-bottom: 5px;
+}
+.donation-details p{
+    color: #555;
+    margin-bottom: 20px;
+     line-height: 1.5; /* Line height for better readability */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: justify;
+}
+.donation-title {
+    flex: 1; /* Take more space on the right */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.donation-title h2 {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.donation-title p{
+    color: #555;
+    margin-bottom: 20px;
+     line-height: 1.5; /* Line height for better readability */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: justify;
+}
+.donation-type {
+    margin-bottom: 20px; /* Space below the dropdown */
+    padding: 10px; /* Padding for dropdown */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+} 
+
+.donation-options {
+    margin-bottom: 20px;
+    padding: 0; /* Remove default padding */
+}
+
+.donation-options label {
+    display: block; /* Stack labels vertically */
+    margin: 10px 0; /* Space between options */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.donation-options input[type="radio"] {
+    margin-right: 10px; /* Space between radio and label text */
+}
+
+
+
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none; /* Disable resizing */
+}
+
+/* Donate button */
+.donate-button {
+    margin-top: 20px; /* Space above button */
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    background-color: #28a745; /* Green background */
+    color: white;
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth background transition */
+    padding: 10px 15px; /* Smaller padding */
+    font-size: 14px; /* Smaller font size */
+}
+
+.donate-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+
+    .donate-card{
+      margin-top: -300px; /* Move card up to hover over subheader */
+    }
+    .image-container {
+        display: none; /* Hide image on small screens */
+    }
+}

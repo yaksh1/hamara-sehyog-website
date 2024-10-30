@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Convergence University</title>
+    <link rel="icon" href="Images/logo_no_bg.png" type="image/x-icon" />
+    <link rel="stylesheet" href="donate.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Poppins:wght@100;200&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="home.html"><img src="Images/logo_no_bg.png" alt="" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="courses.html">PROJECTS</a></li>
+            <!-- <li><a href="blog.html">BLOGS</a></li> -->
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+    </section>
+    <div class="donate-page">
+      <div class="donate-card">
+        <div class="image-container">
+          <img src="Images/area1.jpg" alt="Hamara Sehyog" />
+        </div>
+        <div class="donation-details">
+          <h1>Hamara Sehyog</h1>
+          <p>
+            Great futures are build with accumulation of small charities. Your
+            generosity can change lives; let your compassion ripple through the
+            hearts of the less fortunate.
+          </p>
+          <select class="donation-type" id="donationType">
+            <option value="" disabled selected>Select type of donation</option>
+            <option value="whereNeeded">Where it's needed most</option>
+            <option value="education">Education</option>
+            <option value="food">Food to the needy</option>
+            <option value="healthCare">Health Care</option>
+            <option value="treePlantation">Tree Plantation</option>
+          </select>
+          <div class="donation-options">
+            <label>
+              <input
+                type="radio"
+                name="donation"
+                value="500"
+                onclick="selectOption(this)"
+              />
+              ₹500
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="donation"
+                value="1000"
+                onclick="selectOption(this)"
+              />
+              ₹1000
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="donation"
+                value="3000"
+                onclick="selectOption(this)"
+              />
+              ₹3000
+            </label>
+          </div>
+
+          <textarea
+            id="donationAmount"
+            placeholder="Enter other amount"
+          ></textarea>
+         <button class="donate-button" onclick="showQrCode()">Donate</button>
+          <!-- QR Popup HTML -->
+<div id="qrPopup" class="qr-popup">
+    <div class="qr-popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h3>Scan to Donate ₹<span id="qrAmount"></span></h3>
+        <img id="qrImage" alt="QR Code for Donation">
+    </div>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- ----------footer---------------- -->
+
+    <section class="footer">
+  <h1>Hamara Sehyog</h1>
+
+  <div class="contact-info">
+    <p>Address: FLAT NO A /6/1 GERA EMERALD CITY BUILDING NO 1, 6th FLOOR, SERVEY NO 66, PAN CARD CLUB ROAD, BANER, PUNE 411045</p>
+    <p>Phone: +91 70433 49592, +91 99980 11597</p>
+    <p>Email: foundation.hamarasehyog@gmail.com</p>
+  </div>
+  
+</section>
+
+    <script>
+      function selectOption(selectedOption) {
+        document.getElementById("donationAmount").value =
+          "₹" + selectedOption.value;
+      }
+      function showQrCode() {
+    // Log to check if function is called
+    console.log("Donate button clicked");
+
+    // Get the amount from the textarea
+    const amount = document.getElementById("donationAmount").value;
+
+    if (!amount) {
+        alert("Please enter or select an amount to donate.");
+        return;
+    }
+
+    // Define UPI data
+    let upi = {
+        pa: 'yakshgandhi1@okaxis', // UPI ID
+        pn: 'Foody',               // Payee name
+        tn: 'Donation',            // Transaction note
+        am: amount,                // Amount from textarea
+        cu: 'INR'                  // Currency
+    };
+
+    // Generate UPI link
+    let upiLink = `upi://pay?${new URLSearchParams(upi).toString()}`;
+
+    // Generate QR code link using Google Charts API
+    const qrCodeUrl = `https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=${encodeURIComponent(upiLink)}`;
+
+    // Set QR code image source
+    document.getElementById("qrImage").src = qrCodeUrl;
+
+    // Show QR code popup
+    document.getElementById("qrPopup").style.display = "block";
+}
+    </script>
+    <script src="donate.js"></script>
+    <!-- Import the JavaScript file -->
+  </body>
+</html>

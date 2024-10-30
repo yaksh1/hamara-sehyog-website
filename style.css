@@ -1,0 +1,857 @@
+html { scroll-behavior: smooth; }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box;
+}
+
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
+    url("Images/area1.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  padding: 0% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav img {
+  margin-top: 30px;
+  width: 150px;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px 10px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-links ul li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+.text-box {
+  width: 87%;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 60px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.text-box p {
+  margin: 25px 0 40px;
+  color: #fff3f3;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  border: 1px solid #ffffff;
+  padding: 12px 34px;
+  font-size: 15px;
+  background: transparent;
+  position: relative;
+}
+
+.hero-btn:hover {
+  border: 1px solid #f44336;
+  background: #f44336;
+  transition: 0.8s;
+}
+.red-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #ffffff; /* Set text color to white */
+  border: 1px solid #ffffff;
+  padding: 5px 14px;
+  font-size: 15px;
+  background: #f44336; /* Background remains red */
+  position: relative;
+}
+
+.donate-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #f44336;
+  border: 1px solid #ffffff;
+  padding: 5px 14px;
+  font-size: 15px;
+  background: #f44336;
+  position: relative;
+  }
+nav .fa {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .text-box h1 {
+    font-size: 35px;
+  }
+
+  .nav-links ul li {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    background: #f44336;
+    height: 100vh;
+    width: 200px;
+    max-width: 100%;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    z-index: 2;
+    transition: 0.3s;
+  }
+
+  nav .fa {
+    display: block;
+    color: #fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .nav-links ul {
+    padding: 30px;
+  }
+}
+
+/* ----course---------- */
+
+.course {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.course-col p {
+  color: #8b8b8b;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+  padding: 10px;
+}
+
+.row {
+  margin-top: 3%;
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center the cards in the container */
+}
+.know-more-btn {
+  display: none;
+  margin-top: 15px; /* Adds spacing above the button */
+  padding: 10px 20px;
+  background-color: #ff8c00; /* Elegant shade of orange */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1em;
+  transform: translateY(20px); /* Initially positioned 20px below */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.know-more-btn:hover {
+  background-color: #e07a00; /* Darker orange on hover */
+}
+
+.course-col:hover .know-more-btn {
+  display: inline-block; 
+  opacity: 1;
+  transform: translateY(0); /* Slide up to final position */
+}
+
+/* 
+.course-col:hover .know-more-btn {
+  
+} */
+
+.img-responsive {
+   width: 100%; /* Full width of the card */
+  height: 120px; /* Fixed height for consistent image size */
+  border-radius: 15px; /* Rounded corners for the image */
+  object-fit: cover; /* Scale image to fill space without stretching */
+}
+
+.course-col {
+  width: 300px; /* Consistent card width */
+  height: 250px; /* Consistent card height */
+  position: relative; /* Ensures the button positions correctly inside */
+  flex-basis: 31%;
+  background: #f1ebd3;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  padding: 20px 12px;
+  box-sizing: border-box;
+  transition: 0.5s;
+  text-align: center; /* Centers the button and text */
+  
+}
+.layer-course-col {
+  background: rgba(247, 167, 110, 0.915); /* Semi-transparent overlay color */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s;
+  border-radius: 15px;
+}
+
+.course-col:hover .layer-course-col {
+  opacity: 1; /* Show overlay on hover */
+
+}
+
+.course-intro p {
+  color: #555;
+  margin-top: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 800px;
+  color: #000000;
+  margin: 10px 0;
+  font-size: 25px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.course-col:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  transform: translateY(-10px);
+}
+
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .course-col:hover {
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 0px;
+    transform: translateX(0px);
+  }
+}
+
+/*---------------------------campus-------------------------------------*/
+
+.campus {
+  padding: 20px 40px; /* Top/bottom padding of 20px, left/right padding of 40px */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 40px; /* Ensures alignment with 40px padding on left and right */
+  max-width: 1200px; /* Set a max width for consistent layout */
+  margin: 0 auto; /* Center the container on the page */
+}
+
+
+.text-content {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.text-content h1 {
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  margin-bottom: 20px;
+  margin-top: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #555;
+}
+
+.image-content {
+  flex: 1;
+}
+
+.image-content img {
+  width: 100%; /* Image takes full width of the container */
+  height: 500px; /* Maintains aspect ratio */
+  border-radius: 10px; /* Optional: rounded borders for the image */
+  object-fit: cover; /* Ensures the image fills its space without distortion */
+}
+
+
+/* ------------------carousel------------------------ */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 500px;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease, left 0.5s ease;
+}
+
+.carousel-item.active {
+  left: 0;
+  opacity: 1;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+/* Responsive Styling */
+@media (max-width: 1024px) {
+  .text-content h1 {
+    font-size: 22px;
+  }
+  .text-content p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px), (max-width: 576px) {
+  /* Hide the carousel on smaller screens */
+  .carousel {
+    display: none;
+  }
+
+  /* Style for text content */
+  .text-content {
+    background-color: #f9efd9; /* Off-white background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 10px 0;
+  }
+
+  /* Center text alignment */
+  .text-content h1,
+  .text-content p {
+    text-align: center;
+  }
+
+  /* Adjust layout for smaller screens */
+  .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ---------------facilities--------------------- */
+
+
+.facilities {
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.facilities h1 {
+  /* font-size: 2em; */
+  margin-bottom: 20px;
+}
+
+.facilities-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px 40px;
+}
+
+.facility-card {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 20px;
+  width: calc(30% - 20px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: transform 0.3s ease;
+  margin-top: 40px;
+}
+
+.card-icon {
+  position: absolute;
+  top: -30px; /* Adjust to control how far above the card the SVG hovers */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px; /* Adjust the width to scale your SVG */
+  height: auto;
+  overflow: visible;
+  
+}
+
+.card-icon img {
+  width: 100%;
+  height: auto;
+}
+
+.facility-card h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin-top: 80px; 
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.facility-card p {
+  color: #555;
+  margin-bottom: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+}
+
+.facilities-grid .facility-card:nth-child(4) {
+  margin-top: 60px; /* Adds space above the first card in the second row */
+}
+
+.facilities-grid .facility-card:nth-child(5) {
+  margin-top: 60px; /* Adds space above the first card in the second row */
+}
+
+@media (max-width: 1024px) {
+  .facility-card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .facility-card {
+    width: 100%;
+  }
+}
+
+/* -----------------donate for a cause-------------------------- */
+
+.cause {
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.cause h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.cause-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cause-col {
+  position: relative;
+  width: calc(20% - 20px); /* Fixed width for consistency */
+  height: 350px; /* Fixed height for consistency */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.cause-col::after {
+    content: ""; /* Required for pseudo-element */
+    position: absolute; /* Position overlay */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the card */
+    height: 100%; /* Full height of the card */
+    background-color: rgba(0, 0, 0, 0.5); /* Black tint overlay */
+    opacity: 1; /* Make the overlay always visible */
+    transition: opacity 0.3s ease; /* Smooth transition for potential future hover effects */
+}
+
+.cause-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills card without distortion */
+}
+
+.cause-col h1 {
+  position: absolute;
+  bottom: 40px;
+  left: 10px;
+  color: #f9f9f9;
+  font-size: 1.7em;
+  margin: 0;
+  font-family: 'Lucida Sans', sans-serif;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+  text-align: left;
+  z-index: 1;
+}
+
+.cause-col:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .cause-col {
+    width: calc(50% - 20px); /* 2 cards per row on medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .cause-col {
+    width: 100%; /* 1 card per row on smaller screens */
+  }
+}
+
+
+/* --------------testimonials---------------- */
+
+
+.testimonial {
+  padding: 20px 40px;
+  text-align: center;
+}
+
+
+.testimonial .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.testimonial-col {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 20px;
+  width: calc(45% - 20px); /* 2 testimonials per row with gap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-col p {
+  /* color: #555; */
+  text-align: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.testimonial-col:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .testimonial-col {
+    width: calc(100% - 20px); /* 1 testimonial per row on smaller screens */
+  }
+}
+
+
+/* -------------cta---------- */
+
+.cta {
+  margin: 100px auto;
+  width: 80%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    url("Images/fd1.jpg");
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.cta h1 {
+  color: #fff;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+  }
+  .close-btn {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+.contact-col div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.contact-col i {
+  font-size: 24px;
+  color: #f44336;
+  margin-right: 20px;
+}
+
+.contact-col span {
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Ensure text is left-aligned */
+  
+}
+
+.contact-col h5 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #555;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-col p {
+  font-size: 18px;
+  margin: 5px 0 0 0;
+  color: #555;
+}
+
+
+
+
+/* ---------footer------------ */
+.footer {
+  background-color: #3f4c58; /* Dark blue-gray background */
+  color: #ffffff; /* White text for contrast */
+  padding: 40px 20px; /* Padding for space around content */
+  text-align: center; /* Center-align text */
+}
+
+.footer h1 {
+  font-size: 2em; /* Larger font size for the heading */
+  margin-bottom: 20px; /* Space below heading */
+}
+
+.footer-intro {
+  margin-bottom: 20px; /* Space below intro */
+}
+
+.contact-info {
+  margin-bottom: 20px; /* Space below contact info */
+}
+
+.contact-info h3 {
+  font-size: 1.5em; /* Font size for contact heading */
+}
+
+.icons {
+  margin: 20px 0; /* Space above and below icons */
+}
+
+.icons a {
+  color: #ffffff; /* Icon color */
+  font-size: 24px; /* Size of icons */
+  margin: 0 10px; /* Space between icons */
+  transition: color 0.3s; /* Transition for hover effect */
+}
+
+.icons a:hover {
+  color: #f39c12; /* Color change on hover */
+}
+
+.footer p {
+  margin: 10px 0; /* Space above and below paragraphs */
+}
+
+
+
+/* ---------------------contact us-------------------- */
+
+.location {
+  width: 80%;
+  margin: auto;
+  padding: 80px 0;
+}
+
+.location iframe {
+  width: 100%;
+}
+
+.contact-us {
+  width: 80%;
+  margin: auto;
+}
+
+.contact-col {
+  flex-basis: 48%;
+  margin-bottom: 30px;
+}
+
+.contact-col div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.contact-col div .fa {
+  font-size: 28px;
+  color: #f44336;
+  margin: 10px;
+  margin-right: 30px;
+}
+
+.contact-col div p {
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+.contact-col input,
+.contact-col textarea {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 17px;
+  outline: none;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.form-sending{
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.row {
+  margin-left: 10px;
+  display: flex;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .cta h1{
+    font-size: 24px;
+  }
+  .contact-col div {
+    /* flex-direction: column; */
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .contact-col i {
+    margin-bottom: 10px;
+  }
+  .contact-col h5 {
+    font-size: 15px; /* Smaller font size for h5 on mobile */
+  }
+  .contact-col div .fa {
+  /* font-size: 14px; */
+  color: #f44336;
+  margin: 10px;
+  margin-right: 10px;
+}
+.contact-col p {
+  font-size: 14px;
+  margin: 5px 0 0 0;
+  color: #555;
+}
+}
